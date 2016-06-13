@@ -1,0 +1,24 @@
+#summary How to fix this issue related to insufficient MySQL permissions.
+#labels Phase-Deploy
+
+Some people may be having a problem similar to this:
+{{{
+Failed to create temporary table 'ragnarok.items'.
+}}}
+or
+{{{
+Failed to create temporary table 'ragnarok.monsters'.
+}}}
+
+This is because the item and monster modules in Flux use temporary tables to temporarily merge the item_db/item_db2 tables, as well as the mob_db/mob_db2 tables into single tables of their own.
+
+The existence of these tables are *temporary*, if everything is configured correctly the tables will be dropped from your database.
+
+In order to rid yourself of this error, you will need to make sure that the MySQL user you are connecting with has the permissions to run CREATE TEMPORARY TABLE and DROP TEMPORARY TABLE on the database.
+
+If you have a privileged MySQL user, you can easily do this in various ways.  I'll explain how to do it with phpMyAdmin.
+
+Okay, so find yourself on the phpMyAdmin main page and click the "Privileges" button, then find your user connecting to your eA databases.  Afterwards, you can give that user global or database-specific "CREATE TEMPORARY TABLES" privileges from the "Structure" field set.
+
+Here's a screenshot:
+http://itrebal.com/~kuja/screenshots/phpmyadmin-privs.png

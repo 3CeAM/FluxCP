@@ -1,0 +1,24 @@
+#summary Recruitment page for the Flux project, contains details.
+#labels Featured
+
+= Introduction =
+So, here's how it goes.  Byteflux and Paradox924X started this project but just two people alone is too much for a project with as large a goal (and many) as Flux has.
+
+For that reason, we are recruiting talented members to our staff, people ranging from eA experts to just PHP developers. Check out the requirements below for more details.
+
+
+= Requirements =
+== eAthena Experts ==
+If you are a talented eA user, then from time-to-time we could use your expertise for the purpose of adding cool new features to Flux. This requirement is pretty self-explanatory, it just requires that you have outstanding knowledge with the eAthena software ;)
+
+== PHP Developers ==
+Do you know PHP? Ever created something big, or wanted to help create something big in PHP? Well, you could let your skills go to waste on some other worthless project (yes, I'm evil) or you could spend quality time helping develop Flux!
+
+Here are the requirements for participating in the project:
+  * Must obey PEAR coding standards
+  * Must be intimately familiar with PHP5-based object-oriented programming
+  * Must be familiar with the PDO library
+  * Must know how to use Subversion
+  * Must be familiar with the way Flux currently works
+
+To apply, simply contact either Byteflux or Paradox924X in our IRC Channel (#flux on irc.deltaanime.net).
