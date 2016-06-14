@@ -8,7 +8,7 @@ $title = 'Viewing Character';
 require_once 'Flux/TemporaryTable.php';
 
 $tableName  = "{$server->charMapDatabase}.items";
-$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db2");
+$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db_custom");
 $tempTable  = new Flux_TemporaryTable($server->connection, $tableName, $fromTables);
 
 
@@ -56,7 +56,7 @@ $sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`char` AS party_leader ON pa
 $sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`homunculus` AS homun ON ch.homun_id = homun.homun_id ";
 $sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`pet` ON ch.pet_id = pet.pet_id ";
 $sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`mob_db` AS pet_mob ON pet_mob.ID = pet.class ";
-$sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`mob_db2` AS pet_mob2 ON pet_mob2.ID = pet.class ";
+$sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`mob_db_custom` AS pet_mob2 ON pet_mob2.ID = pet.class ";
 $sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`global_reg_value` AS reg ON reg.char_id = ch.char_id AND reg.str = 'PC_DIE_COUNTER' ";
 $sql .= "WHERE ch.char_id = ?";
 

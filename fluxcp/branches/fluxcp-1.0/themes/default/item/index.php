@@ -196,7 +196,7 @@
 			<?php endif ?>
 		</td>
 		<td>
-			<?php if (preg_match('/item_db2$/', $item->origin_table)): ?>
+			<?php if (preg_match('/item_db_custom$/', $item->origin_table)): ?>
 				Yes
 			<?php else: ?>
 				No

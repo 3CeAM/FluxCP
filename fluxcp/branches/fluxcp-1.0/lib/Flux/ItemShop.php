@@ -136,7 +136,7 @@ class Flux_ItemShop {
 	public function getItem($shopItemID)
 	{
 		$db    = $this->server->charMapDatabase;
-		$temp  = new Flux_TemporaryTable($this->server->connection, "$db.items", array("$db.item_db", "$db.item_db2"));
+		$temp  = new Flux_TemporaryTable($this->server->connection, "$db.items", array("$db.item_db", "$db.item_db_custom"));
 		$shop  = Flux::config('FluxTables.ItemShopTable');
 		$col   = "$shop.id AS shop_item_id, $shop.category AS shop_item_category, $shop.cost AS shop_item_cost, $shop.quantity AS shop_item_qty, $shop.use_existing AS shop_item_use_existing, ";
 		$col  .= "$shop.nameid AS shop_item_nameid, $shop.info AS shop_item_info, items.name_japanese AS shop_item_name";
@@ -158,7 +158,7 @@ class Flux_ItemShop {
 	{	
 		$bind  = array();
 		$db    = $this->server->charMapDatabase;
-		$temp  = new Flux_TemporaryTable($this->server->connection, "$db.items", array("$db.item_db", "$db.item_db2"));
+		$temp  = new Flux_TemporaryTable($this->server->connection, "$db.items", array("$db.item_db", "$db.item_db_custom"));
 		$shop  = Flux::config('FluxTables.ItemShopTable');
 		$col   = "$shop.id AS shop_item_id, $shop.cost AS shop_item_cost, $shop.quantity AS shop_item_qty, $shop.use_existing AS shop_item_use_existing, ";
 		$col  .= "$shop.nameid AS shop_item_nameid, $shop.info AS shop_item_info, items.name_japanese AS shop_item_name";

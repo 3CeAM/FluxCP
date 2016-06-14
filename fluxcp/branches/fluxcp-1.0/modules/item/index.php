@@ -9,7 +9,7 @@ require_once 'Flux/TemporaryTable.php';
 
 try {
 	$tableName  = "{$server->charMapDatabase}.items";
-	$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db2");
+	$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db_custom");
 	$tempTable  = new Flux_TemporaryTable($server->connection, $tableName, $fromTables);
 	$shopTable  = Flux::config('FluxTables.ItemShopTable');
 	
@@ -230,7 +230,7 @@ try {
 		
 		if ($custom) {
 			if ($custom == 'yes') {
-				$sqlpartial .= "AND origin_table LIKE '%item_db2' ";
+				$sqlpartial .= "AND origin_table LIKE '%item_db_custom' ";
 			}
 			elseif ($custom == 'no') {
 				$sqlpartial .= "AND origin_table LIKE '%item_db' ";

@@ -9,7 +9,7 @@ require_once 'Flux/TemporaryTable.php';
 
 try {
 	$tableName  = "{$server->charMapDatabase}.monsters";
-	$fromTables = array("{$server->charMapDatabase}.mob_db", "{$server->charMapDatabase}.mob_db2");
+	$fromTables = array("{$server->charMapDatabase}.mob_db", "{$server->charMapDatabase}.mob_db_custom");
 	$tempTable  = new Flux_TemporaryTable($server->connection, $tableName, $fromTables);
 	
 	// Statement parameters, joins and conditions.
@@ -148,7 +148,7 @@ try {
 		
 		if ($custom) {
 			if ($custom == 'yes') {
-				$sqlpartial .= "AND origin_table LIKE '%mob_db2' ";
+				$sqlpartial .= "AND origin_table LIKE '%mob_db_custom' ";
 			}
 			elseif ($custom == 'no') {
 				$sqlpartial .= "AND origin_table LIKE '%mob_db' ";

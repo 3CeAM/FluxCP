@@ -70,7 +70,7 @@ if ($picks) {
 	
 	if ($mobIDs) {
 		$mobDB      = "{$server->charMapDatabase}.monsters";
-		$fromTables = array("{$server->charMapDatabase}.mob_db", "{$server->charMapDatabase}.mob_db2");
+		$fromTables = array("{$server->charMapDatabase}.mob_db", "{$server->charMapDatabase}.mob_db_custom");
 		$tempMobs   = new Flux_TemporaryTable($server->connection, $mobDB, $fromTables);
 
 		$ids = array_keys($mobIDs);
@@ -88,7 +88,7 @@ if ($picks) {
 
 	if ($itemIDs) {
 		$tableName  = "{$server->charMapDatabase}.items";
-		$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db2");
+		$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db_custom");
 		$tempTable  = new Flux_TemporaryTable($server->connection, $tableName, $fromTables);
 		$shopTable  = Flux::config('FluxTables.ItemShopTable');
 

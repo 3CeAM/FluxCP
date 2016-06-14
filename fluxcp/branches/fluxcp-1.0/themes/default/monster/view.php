@@ -70,7 +70,7 @@
 		<td><?php echo htmlspecialchars($monster->kro_name) ?></td>
 		<th>Custom</th>
 		<td>
-			<?php if (preg_match('/mob_db2$/', $monster->origin_table)): ?>
+			<?php if (preg_match('/mob_db_custom$/', $monster->origin_table)): ?>
 				Yes
 			<?php else: ?>
 				No

@@ -16,7 +16,7 @@ $item        = $shop->getItem($shopItemID);
 
 if ($item) {
 	$tableName  = "{$server->charMapDatabase}.items";
-	$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db2");
+	$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db_custom");
 	$tempTable  = new Flux_TemporaryTable($server->connection, $tableName, $fromTables);
 	$shopTable  = Flux::config('FluxTables.ItemShopTable');
 

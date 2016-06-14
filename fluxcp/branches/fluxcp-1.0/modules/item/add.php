@@ -143,7 +143,7 @@ if (count($_POST) && $params->get('additem')) {
 			require_once 'Flux/TemporaryTable.php';
 
 			$tableName  = "{$server->charMapDatabase}.items";
-			$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db2");
+			$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db_custom");
 			$tempTable  = new Flux_TemporaryTable($server->connection, $tableName, $fromTables);
 			$shopTable  = Flux::config('FluxTables.ItemShopTable');
 			
@@ -224,7 +224,7 @@ if (count($_POST) && $params->get('additem')) {
 					$bind[] = $gender;
 				}
 				
-				$sql  = "INSERT INTO {$server->charMapDatabase}.item_db2 (".implode(', ', $cols).") ";
+				$sql  = "INSERT INTO {$server->charMapDatabase}.item_db_custom (".implode(', ', $cols).") ";
 				$sql .= "VALUES (".implode(', ', array_fill(0, count($bind), '?')).")";
 				$sth  = $server->connection->getStatement($sql);
 				

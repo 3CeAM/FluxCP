@@ -8,12 +8,12 @@ require_once 'Flux/TemporaryTable.php';
 
 // Monsters table.
 $mobDB      = "{$server->charMapDatabase}.monsters";
-$fromTables = array("{$server->charMapDatabase}.mob_db", "{$server->charMapDatabase}.mob_db2");
+$fromTables = array("{$server->charMapDatabase}.mob_db", "{$server->charMapDatabase}.mob_db_custom");
 $tempMobs   = new Flux_TemporaryTable($server->connection, $mobDB, $fromTables);
 
 // Items table.
 $itemDB     = "{$server->charMapDatabase}.items";
-$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db2");
+$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db_custom");
 $tempItems  = new Flux_TemporaryTable($server->connection, $itemDB, $fromTables);
 
 $col  = 'origin_table, ID as monster_id, Sprite AS sprite, kName AS kro_name, iName AS iro_name, LV AS level, HP AS hp, ';

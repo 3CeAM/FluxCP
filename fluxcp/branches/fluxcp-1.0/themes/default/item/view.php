@@ -133,7 +133,7 @@
 			<?php endif ?>
 		</td>
 	</tr>
-	<?php if (($isCustom && $auth->allowedToSeeItemDb2Scripts) || (!$isCustom && $auth->allowedToSeeItemDbScripts)): ?>
+	<?php if (($isCustom && $auth->allowedToSeeItemDbCuScripts) || (!$isCustom && $auth->allowedToSeeItemDbScripts)): ?>
 	<tr>
 		<th>Item Use Script</th>
 		<td colspan="<?php echo $image ? 4 : 3 ?>">

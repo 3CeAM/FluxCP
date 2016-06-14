@@ -138,7 +138,7 @@
 			<td><span class="not-applicable">None</span></td>
 		<?php endif ?>
 		<td>
-			<?php if (preg_match('/mob_db2$/', $monster->origin_table)): ?>
+			<?php if (preg_match('/mob_db_custom$/', $monster->origin_table)): ?>
 				Yes
 			<?php else: ?>
 				No

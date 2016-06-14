@@ -4,7 +4,7 @@
 <?php if (!empty($errorMessage)): ?>
 <p class="red"><?php echo htmlspecialchars($errorMessage) ?></p>
 <?php else: ?>
-<p>Here you can copy an item into <em>item_db2</em> with a new item ID.</p>
+<p>Here you can copy an item into <em>item_db_custom</em> with a new item ID.</p>
 <?php endif ?>
 <form action="<?php echo $this->urlWithQs ?>" method="post" class="generic-form">
 	<input type="hidden" name="copyitem" value="1" />

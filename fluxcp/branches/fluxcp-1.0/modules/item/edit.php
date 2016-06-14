@@ -5,7 +5,7 @@ require_once 'Flux/Config.php';
 require_once 'Flux/TemporaryTable.php';
 
 $tableName  = "{$server->charMapDatabase}.items";
-$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db2");
+$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db_custom");
 $tempTable  = new Flux_TemporaryTable($server->connection, $tableName, $fromTables);
 
 $title = 'Modify Item';
@@ -27,7 +27,7 @@ $item = $sth->fetch();
 
 // Check if item exists, first.
 if ($item) {
-	$isCustom      = preg_match('/item_db2$/', $item->origin_table) ? true : false;
+	$isCustom      = preg_match('/item_db_custom$/', $item->origin_table) ? true : false;
 	
 	if ($params->get('edititem')) {
 		$viewID        = $params->get('view');
@@ -251,7 +251,7 @@ if ($item) {
 						$set[] = "$col = ?";
 					}
 					
-					$sql  = "UPDATE {$server->charMapDatabase}.item_db2 SET ";
+					$sql  = "UPDATE {$server->charMapDatabase}.item_db_custom SET ";
 					$sql .= implode($set, ', ');
 					$sql .= " WHERE id = ?";
 
@@ -260,7 +260,7 @@ if ($item) {
 					$bind[] = $itemID;
 				}
 				else {
-					$sql  = "INSERT INTO {$server->charMapDatabase}.item_db2 (".implode(', ', $cols).") ";
+					$sql  = "INSERT INTO {$server->charMapDatabase}.item_db_custom (".implode(', ', $cols).") ";
 					$sql .= "VALUES (".implode(', ', array_fill(0, count($bind), '?')).")";
 				}
 

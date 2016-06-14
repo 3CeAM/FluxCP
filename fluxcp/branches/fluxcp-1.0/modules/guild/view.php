@@ -8,7 +8,7 @@ $title = 'Viewing Guild';
 require_once 'Flux/TemporaryTable.php';
 
 $tableName  = "{$server->charMapDatabase}.items";
-$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db2");
+$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db_custom");
 $tempTable  = new Flux_TemporaryTable($server->connection, $tableName, $fromTables);
 
 $guildID = $params->get('id');

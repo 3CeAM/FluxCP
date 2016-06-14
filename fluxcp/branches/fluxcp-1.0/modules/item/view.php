@@ -8,7 +8,7 @@ $title = 'Viewing Item';
 require_once 'Flux/TemporaryTable.php';
 
 $tableName  = "{$server->charMapDatabase}.items";
-$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db2");
+$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db_custom");
 $tempTable  = new Flux_TemporaryTable($server->connection, $tableName, $fromTables);
 $shopTable  = Flux::config('FluxTables.ItemShopTable');
 
@@ -34,10 +34,10 @@ $isCustom = null;
 
 if ($item) {
 	$title = "Viewing Item ($item->name)";
-	$isCustom = (bool)preg_match('/item_db2$/', $item->origin_table);
+	$isCustom = (bool)preg_match('/item_db_custom$/', $item->origin_table);
 	
 	$mobDB      = "{$server->charMapDatabase}.monsters";
-	$fromTables = array("{$server->charMapDatabase}.mob_db", "{$server->charMapDatabase}.mob_db2");
+	$fromTables = array("{$server->charMapDatabase}.mob_db", "{$server->charMapDatabase}.mob_db_custom");
 	$mobTable   = new Flux_TemporaryTable($server->connection, $mobDB, $fromTables);
 	
 	$col  = 'ID AS monster_id, iName AS monster_name, LV AS monster_level, ';
