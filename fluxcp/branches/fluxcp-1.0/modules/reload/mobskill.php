@@ -5,11 +5,13 @@ $title = Flux::message('ReloadMobSkillsTitle');
 
 $mobDB1 = Flux::config('MobSkillDb1');
 $mobDB2 = Flux::config('MobSkillDb2');
+$mobDB3 = Flux::config('MobSkillDb3');
 $mobDB  = Flux::config('MobSkillDb');
 
 // Check permissions.
 $readable1 = is_readable($mobDB1);
 $readable2 = is_readable($mobDB2);
+$readable3 = is_readable($mobDB3);
 $writable  = !file_exists($mobDB) || is_writable($mobDB);
 
 if (!$readable1) {
@@ -18,16 +20,20 @@ if (!$readable1) {
 else if (!$readable2) {
 	$errorMessage = sprintf(Flux::message('ReloadMobSkillsError2'), $mobDB2);
 }
+else if (!$readable3) {
+	$errorMessage = sprintf(Flux::message('ReloadMobSkillsError3'), $mobDB2);
+}
 else if (!$writable) {
-	$errorMessage = sprintf(Flux::message('ReloadMobSkillsError3'), $mobDB);
+	$errorMessage = sprintf(Flux::message('ReloadMobSkillsError4'), $mobDB);
 }
 else {
 	$fdb1 = fopen($mobDB1, 'r');
 	$fdb2 = fopen($mobDB2, 'r');
+	$fdb3 = fopen($mobDB3, 'r');
 	$fdb = fopen($mobDB, 'w');
 	
 	if (!$fdb) {
-		$errorMessage = sprintf(Flux::message('ReloadMobSkillsError3'), $mobDB);
+		$errorMessage = sprintf(Flux::message('ReloadMobSkillsError4'), $mobDB);
 		break;
 	}
 

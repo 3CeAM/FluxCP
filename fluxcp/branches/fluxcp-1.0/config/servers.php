@@ -53,12 +53,12 @@ return array(
 		'CharMapServers' => array(
 			array(
 				'ServerName'    => 'FluxRO',
-				'BaseExpRates'  => 200,
-				'JobExpRates'   => 200,
-				'MvpExpRates'   => 200,
-				'DropRates'     => 25,
-				'MvpDropRates'  => 25,
-				'CardDropRates' => 25,
+				'BaseExpRates'  => 1,	// Rates are absolute.
+				'JobExpRates'   => 1,	// A setting of 200 for example would be 200x.
+				'MvpExpRates'   => 1,
+				'DropRates'     => 1,
+				'MvpDropRates'  => 1,
+				'CardDropRates' => 1,
 				'MaxCharSlots'  => 9,
 				'DateTimezone'  => null,       // Specifies game server's timezone for this char/map pair. (See: http://php.net/timezones)
 				//'ResetDenyMaps' => 'sec_pri',  // Defaults to 'sec_pri'. This value can be an array of map names.

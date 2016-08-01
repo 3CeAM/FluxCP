@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 return array(	
 	// Generic/Misc.
 	'YesLabel'                => 'Yes',
@@ -571,7 +571,8 @@ return array(
 	'ReloadMobSkillsHeading'  => 'Reload Mob Skills',
 	'ReloadMobSkillsError1'   => '%s is not readable.',
 	'ReloadMobSkillsError2'   => '%s is not readable.',
-	'ReloadMobSkillsError3'   => '%s is not writable.',
+	'ReloadMobSkillsError3'   => '%s is not readable.',
+	'ReloadMobSkillsError4'   => '%s is not writable.',
 	'ReloadMobSkillsInfo'     => 'Mob skills database has been successfully reloaded! (%s bytes written)',
 	
 	// Module: server

@@ -9,7 +9,7 @@ require_once 'Flux/TemporaryTable.php';
 
 try {
 	$tableName  = "{$server->charMapDatabase}.items";
-	$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db_custom");
+	$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db_3ceam", "{$server->charMapDatabase}.item_db_custom");
 	$tempTable  = new Flux_TemporaryTable($server->connection, $tableName, $fromTables);
 	$shopTable  = Flux::config('FluxTables.ItemShopTable');
 	

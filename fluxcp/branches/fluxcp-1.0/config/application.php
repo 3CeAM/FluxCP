@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // This is the application configuration file. All values have been set to
 // the default, and should be changed as needed.
 return array(
@@ -400,7 +400,8 @@ return array(
 
 	// Do not change these unless you also rename the files in FLUX_ROOT/lib/eA/
 	'MobSkillDb1' => FLUX_ROOT.'/lib/eA/mob_skill_db.txt',
-	'MobSkillDb2' => FLUX_ROOT.'/lib/eA/mob_skill_db_custom.txt',
+	'MobSkillDb2' => FLUX_ROOT.'/lib/eA/mob_skill_db_3ceam.txt',
+	'MobSkillDb3' => FLUX_ROOT.'/lib/eA/mob_skill_db_custom.txt',
 
 	// This is the combined file of the Mob Skill DBs minus the comments and clutter.
 	'MobSkillDb'  => FLUX_ROOT.'/lib/eA/mob_skills.txt'

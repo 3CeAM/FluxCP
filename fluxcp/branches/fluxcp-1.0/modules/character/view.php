@@ -8,7 +8,7 @@ $title = 'Viewing Character';
 require_once 'Flux/TemporaryTable.php';
 
 $tableName  = "{$server->charMapDatabase}.items";
-$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db_custom");
+$fromTables = array("{$server->charMapDatabase}.item_db", "{$server->charMapDatabase}.item_db_3ceam", "{$server->charMapDatabase}.item_db_custom");
 $tempTable  = new Flux_TemporaryTable($server->connection, $tableName, $fromTables);
 
 
@@ -37,7 +37,7 @@ $col .= "homun.hp AS homun_hp, homun.max_hp As homun_max_hp, homun.sp AS homun_s
 $col .= "homun.skill_point AS homun_skill_point, homun.alive AS homun_alive, ";
 
 $col .= "pet.class AS pet_class, pet.name AS pet_name, pet.level AS pet_level, pet.intimate AS pet_intimacy, ";
-$col .= "pet.hungry AS pet_hungry, pet_mob.kName AS pet_mob_name, pet_mob2.kName AS pet_mob_name2, ";
+$col .= "pet.hungry AS pet_hungry, pet_mob.kName AS pet_mob_name, pet_mob2.kName AS pet_mob_name2, pet_mob3.kName AS pet_mob_name3, ";
 
 $col .= "IFNULL(reg.value, 0) AS death_count";
 
@@ -56,7 +56,8 @@ $sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`char` AS party_leader ON pa
 $sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`homunculus` AS homun ON ch.homun_id = homun.homun_id ";
 $sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`pet` ON ch.pet_id = pet.pet_id ";
 $sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`mob_db` AS pet_mob ON pet_mob.ID = pet.class ";
-$sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`mob_db_custom` AS pet_mob2 ON pet_mob2.ID = pet.class ";
+$sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`mob_db_3ceam` AS pet_mob2 ON pet_mob2.ID = pet.class ";
+$sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`mob_db_custom` AS pet_mob3 ON pet_mob3.ID = pet.class ";
 $sql .= "LEFT OUTER JOIN {$server->charMapDatabase}.`global_reg_value` AS reg ON reg.char_id = ch.char_id AND reg.str = 'PC_DIE_COUNTER' ";
 $sql .= "WHERE ch.char_id = ?";
 
@@ -65,7 +66,10 @@ $sth->execute(array($charID));
 
 $char = $sth->fetch();
 
-if ($char->pet_mob_name2) {
+if ($char->pet_mob_name3) {
+	$char->pet_mob_name = $char->pet_mob_name3;
+}
+else if ($char->pet_mob_name2) {
 	$char->pet_mob_name = $char->pet_mob_name2;
 }
 

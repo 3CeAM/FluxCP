@@ -194,8 +194,7 @@ return array(
 		'ModifyIpBan'        => AccountLevel::ADMIN,  // Level required to modify an existing IP ban.
 		'RemoveIpBan'        => AccountLevel::ADMIN,  // Level required to remove an existing IP ban.
 		'HideFromZenyRank'   => AccountLevel::NORMAL, // Ability to set "Hide from zeny ranking" pref.
-		'SeeItemDbScripts'   => AccountLevel::ANYONE, // Ability to see item_db scripts in view page.
-		//'SeeItemDb3cScripts' => AccountLevel::ANYONE, // Ability to see item_db_3ceam scripts in view page.
+		'SeeItemDbScripts'   => AccountLevel::ANYONE, // Ability to see item_db and item_db_3ceam scripts in view page.
 		'SeeItemDbCuScripts' => AccountLevel::ADMIN,  // Ability to see item_db_custom scripts in view page.
 		'ViewRawTxnLogData'  => AccountLevel::ADMIN,  // Level required to view Raw Transaction Log in txnview page.
 		'ResetLook'          => AccountLevel::LOWGM,  // Level required to reset another character's look.

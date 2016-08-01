@@ -9,7 +9,7 @@ require_once 'Flux/TemporaryTable.php';
 
 try {
 	$tableName  = "{$server->charMapDatabase}.monsters";
-	$fromTables = array("{$server->charMapDatabase}.mob_db", "{$server->charMapDatabase}.mob_db_custom");
+	$fromTables = array("{$server->charMapDatabase}.mob_db", "{$server->charMapDatabase}.mob_db_3ceam", "{$server->charMapDatabase}.mob_db_custom");
 	$tempTable  = new Flux_TemporaryTable($server->connection, $tableName, $fromTables);
 	
 	// Statement parameters, joins and conditions.
