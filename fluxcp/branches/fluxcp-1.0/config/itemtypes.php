@@ -12,6 +12,6 @@ return array(
 	//9 => 'Unknown2',
 	10 => 'Ammo',
 	11 => 'Delay Consume',
-	//18 => 'Cash Shop Reward'
+	18 => 'Cash Shop Item'
 )
 ?>

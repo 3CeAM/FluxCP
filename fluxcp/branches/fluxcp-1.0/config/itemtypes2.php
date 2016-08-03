@@ -10,7 +10,7 @@ return array(
 		6 => 'One-Handed Axe',
 		7 => 'Two-Handed Axe',
 		8 => 'Mace',
-		//9 => 'Unused',
+		9 => 'Two-Handed Mace',
 		10 => 'Staff',
 		11 => 'Bow',
 		12 => 'Knuckle',
@@ -23,7 +23,8 @@ return array(
 		19 => 'Gatling Gun',
 		20 => 'Shotgun',
 		21 => 'Grenade Launcher',
-		22 => 'Fuuma Shuriken'
+		22 => 'Fuuma Shuriken',
+		23 => 'Two-Handed Staff'
 	),
 	10 => array( // Ammo
 		1 => 'Arrow',
@@ -32,7 +33,9 @@ return array(
 		4 => 'Shell',
 		5 => 'Grenade',
 		6 => 'Shuriken',
-		7 => 'Kunai'
+		7 => 'Kunai',
+		8 => 'Cannonball',
+		9 => 'Throwable Item'
 	)
 )
 ?>
