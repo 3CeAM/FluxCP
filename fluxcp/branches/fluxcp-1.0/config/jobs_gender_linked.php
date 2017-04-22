@@ -13,6 +13,8 @@ return array(
 	4104 => 'Baby Minstrel',
 	4105 => 'Baby Wanderer',
 	4211 => 'Kagerou',
-	4212 => 'Oboro'
+	4212 => 'Oboro',
+	4223 => 'Baby Kagerou',
+	4224 => 'Baby Oboro'
 )
 ?>
