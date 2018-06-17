@@ -145,8 +145,14 @@ return array(
 	4226 => 'Baby Star Gladiator',
 	4227 => 'Baby Soul Linker',
 	4228 => 'Baby Gunslinger',
-	4229 => 'Baby Rebellion'
+	4229 => 'Baby Rebellion',
 
-	//4238 => 'Baby Star Gladiator (Flying)'
+	//4238 => 'Baby Star Gladiator (Flying)',
+	4239 => 'Star Emperor',
+	4240 => 'Soul Reaper',
+	4241 => 'Baby Star Emperor',
+	4242 => 'Baby Soul Reaper'
+	//4243 => 'Star Emperor (Flying)',
+	//4244 => 'Baby Star Emperor (Flying)'
 )
 ?>
